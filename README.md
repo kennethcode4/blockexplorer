@@ -1,59 +1,47 @@
-# Blockexplorer
+<p align="center">
+  <a href="https://agilbit.com/" target="blank"><img src="https://agilbit.com/wp-content/uploads/2022/04/logoAgilbit190.png" width="120" alt="Agilbit Logo" /></a>
+</p>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.8.
+  <p align="center">Ethereum Block Explorer <a href="https://kennethburgos.com" target="_blank">by Kenneth Code</a>. Main technologies involved: Angular, Alchemy-SDK, Ether.js</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Development server
+## Description
 
-To start a local development server, run:
+The lessons this week covered the Ethereum JSON-RPC API and the ethers.js library giving us the ability to query the Ethereum blockchain and make transactions!
 
-```bash
-ng serve
-```
+Let's put that knowledge to the test by building our very own Ethereum Block Explorer!
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Blockexplorers give us the ability to view lots of different information about the blockchain including data about:
 
-## Code scaffolding
+the blockchain network itself
+blocks in the blockchain
+transactions in a block
+accounts
+and many other things
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Project setup
 
 ```bash
-ng build
+$ npm install
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Compile and run the project
 
 ```bash
-ng test
+# development
+$ npm run start
+
 ```
+## Stay in touch
 
-## Running end-to-end tests
+- Author - [Kenneth Code](https://kennethburgos.com)
+- Website - [https://agilbit.com](https://agilbit.com/)
+- Facebook - [@agilbit1](https://www.facebook.com/agilbit1)
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
