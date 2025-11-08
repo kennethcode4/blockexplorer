@@ -1,12 +1,15 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+// import { RouterOutlet } from '@angular/router';
+import { LatestBlock } from './components/latest-block/latest-block';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [LatestBlock],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
-  protected readonly title = signal('blockexplorer');
+  onBlocksLoaded() {
+    console.log('🎉 Los bloques se cargaron correctamente al entrar en el viewport');
+  }
 }
