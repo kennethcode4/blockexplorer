@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Alchemy, Block, Network } from 'alchemy-sdk';
+import { Alchemy, Block, BlockWithTransactions, Network } from 'alchemy-sdk';
 import { environment } from '../../environment/environment';
 
 @Injectable({
@@ -34,5 +34,37 @@ export class Ethereum {
       console.error('Error al obtener los últimos bloques:', error);
       throw error;
     }
+  }
+
+  /**
+   * Obtiene la información de un bloque por número o hash.
+   * @param blockId número del bloque o hash del bloque.
+   */
+  async getBlock(blockId: number | string): Promise<Block> {
+    try {
+      const block = await this.alchemy.core.getBlock(blockId);
+      return block;
+    } catch (error) {
+      console.error('Error al obtener bloque:', error);
+      throw error;
+    }
+  }
+
+    /**
+   * Obtiene la información de un bloque por número o hash con todas sus transacciones.
+   * @param blockId número del bloque o hash del bloque.
+   */
+  async getBlockWithTransactions(blockId: number | string): Promise<BlockWithTransactions> {
+    try {
+      const block = await this.alchemy.core.getBlockWithTransactions(blockId);
+      return block;
+    } catch (error) {
+      console.error('Error al obtener bloque:', error);
+      throw error;
+    }
+  }
+
+  async getTransactionReceipt(hash: string) {
+    return this.alchemy.core.getTransactionReceipt(hash);
   }
 }

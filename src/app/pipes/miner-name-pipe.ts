@@ -15,8 +15,6 @@ export class MinerNamePipe implements PipeTransform {
 
   transform(value: string): string {
     if (!value) return '';
-    console.log(value);
-
     return this.minerNames[value] || value;
   }
 }

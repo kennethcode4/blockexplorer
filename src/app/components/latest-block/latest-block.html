@@ -1,51 +1,35 @@
-<div class="container">
-  <h2 class="text-2xl font-bold mb-4">Latest Blocks</h2>
+<h2 class="text-2xl font-bold mb-4">Latest Blocks</h2>
 
 
 
-  @if (loading) {
-  <p class="text-gray-500">⏳ Cargando bloques...</p>
-  } @else if (error) {
-  <p class="text-red-600">❌ Error: {{ error }}</p>
-  } @else {
-  @for (block of blocks; track block.number) {
-  <ul>
-    <li>
-      <div class="mb-3 p-4 rounded border bg-white shadow">
-        <div class="font-bold text-lg">Bloque #{{ block.number }}</div>
+@if (loading) {
+<p class="text-gray-500">⏳ Loading blocks...</p>
+} @else if (error) {
+<p class="text-red-600">❌ Error: {{ error }}</p>
+} @else {
+@for (block of blocks; track block.number) {
+<ul>
+  <li>
+    <div class="mb-3 p-4 rounded border bg-white shadow">
+      <div class="font-bold text-lg">Block <a class="k-link" [routerLink]="['/block', block.number]">#{{
+          block.number}}</a></div>
 
-        <div class="text-sm text-gray-600">
-          Hash: <span class="font-mono">{{ block.hash }}</span>
-        </div>
-
-        <div class="text-sm text-gray-600">
-          {{ block.timestamp * 1000 | timeAgo }}
-        </div>
-
-        <div class="text-sm">
-          Transacciones: {{ block.transactions.length }}
-        </div>
-        <div class="text-sm">
-          Miner: {{block.miner | minerName}}
-        </div>
+      <div class="text-sm text-gray-600">
+        Hash: <span class="font-mono">{{ block.hash }}</span>
       </div>
-    </li>
-  </ul>
 
-  <!-- <div class="mb-3 p-4 rounded border bg-white shadow">
-    <div class="font-bold text-lg">Bloque #{{ block.number }}</div>
+      <div class="text-sm text-gray-600">
+        {{ block.timestamp * 1000 | timeAgo }}
+      </div>
 
-    <div class="text-sm text-gray-600">
-      Hash: <span class="font-mono">{{ block.hash }}</span>
+      <div class="text-sm">
+        Txns: {{ block.transactions.length }}
+      </div>
+      <div class="text-sm">
+        Miner: {{block.miner | minerName}}
+      </div>
     </div>
-
-    <div class="text-sm text-gray-600">
-      Timestamp: {{ block.timestamp * 1000 | date:'medium' }}
-    </div>
-
-    <div class="text-sm">
-      Transacciones: {{ block.transactions.length }}
-    </div>
-  </div> -->
-  }
-  }
+  </li>
+</ul>
+}
+}

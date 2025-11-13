@@ -1,16 +1,1 @@
-
-@defer (on viewport; prefetch on idle) {
-  <app-last-block (loaded)="onBlocksLoaded()" />
-} @placeholder {
-  <div class="text-center text-gray-500 p-4">
-    💤 Esperando que la sección entre en pantalla...
-  </div>
-} @loading {
-  <div class="text-center text-blue-600 p-4">
-    ⏳ Preparando la sección de bloques...
-  </div>
-} @error {
-  <div class="text-center text-red-600 p-4">
-    ❌ Error al cargar la sección.
-  </div>
-}
+<router-outlet></router-outlet>

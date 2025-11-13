@@ -1,0 +1,42 @@
+@defer (when block) {
+<h3 class="my-4">Block # <span class="k-secondary-text">{{block.number}}</span></h3>
+
+<h4>Overview</h4>
+<hr class="my-4" />
+<p>
+  Block Height: {{block.number}} <br>
+  Status: TODO <br>
+  Timestamp: {{block.timestamp * 1000 | timeAgo}} ({{block.timestamp * 1000 | date:'long' }}) <br>
+  Proposed On: TODO <br>
+  Transactions: {{block.transactions.length}} <br>
+  Withdrawals: Aparece solo si el bloque es posterior al upgrade de retiro y el nodo lo soporta (block.withdrawals).
+</p>
+<hr class="my-4" />
+Fee Recipient: {{block.miner| minerName}} <br>
+Block Reward: {{totalRewardEth}} ETH<br>
+Total Difficulty: TODO <br>
+Size: TODO <br>
+<hr class="my-4">
+Gas Used: {{block.gasUsed.toString() | number}} <br>
+Gas Limit: {{block.gasLimit.toString() | number}} <br>
+Base Fee Per Gas: {{block.baseFeePerGas?.toString() | number}} <br>
+Burnt Fees: {{burntFeesEth}} ETH
+<hr class="my-4">
+Hash: {{block.hash}} <br>
+Parent Hash: {{block.parentHash}} <br>
+Extra Data: {{block.extraData}} <br>
+Nonce: {{block.nonce}}
+} @placeholder {
+<div class="text-center text-gray-500 p-4">
+  💤 Waiting blocks list...
+</div>
+} @loading {
+<div class="text-center text-blue-600 p-4">
+  ⏳ Loading blocks...
+</div>
+} @error {
+<div class="text-center text-red-600 p-4">
+  ❌ Error cannot load blocks list.
+</div>
+}
+

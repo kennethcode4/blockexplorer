@@ -1,0 +1,15 @@
+@defer (on viewport; prefetch on idle) {
+  <app-last-block />
+} @placeholder {
+  <div class="text-center text-gray-500 p-4">
+    💤 Waiting blocks list...
+  </div>
+} @loading {
+  <div class="text-center text-blue-600 p-4">
+    ⏳ Loading blocks...
+  </div>
+} @error {
+  <div class="text-center text-red-600 p-4">
+    ❌ Error cannot load blocks list.
+  </div>
+}
