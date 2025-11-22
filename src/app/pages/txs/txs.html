@@ -1,0 +1,33 @@
+<div class="p-6">
+
+  <h1 class="text-2xl font-bold mb-4">
+    Transactions's Block #{{ blockId }}
+  </h1>
+
+  @if (loading) {
+  <p class="text-gray-500">⏳ Cargando transacciones...</p>
+  } @else if (error) {
+  <p class="text-red-600">❌ {{ error }}</p>
+  } @else {
+
+  @if (block) {
+  <div class="text-sm text-gray-700 mb-4">
+    Total transacciones: <strong>{{ block.transactions.length }}</strong>
+  </div>
+
+  <ul class="space-y-3">
+    @for (tx of block.transactions; track tx.hash) {
+    <li class="border p-3 rounded shadow-sm bg-white">
+      <div><strong>Hash:</strong> <span class="font-mono">{{ tx.hash }}</span></div>
+      <div><strong>From:</strong> {{ tx.from }}</div>
+      <div><strong>To:</strong> {{ tx.to }}</div>
+      <div><strong>Value:</strong> {{ tx.value }} wei</div>
+      <div><strong>Gas:</strong> {{ tx.maxFeePerGas }}</div>
+    </li>
+    }
+  </ul>
+  }
+
+  }
+
+</div>

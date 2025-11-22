@@ -8,7 +8,7 @@
   Status: TODO <br>
   Timestamp: {{block.timestamp * 1000 | timeAgo}} ({{block.timestamp * 1000 | date:'long' }}) <br>
   Proposed On: TODO <br>
-  Transactions: {{block.transactions.length}} <br>
+  Transactions: <a routerLink="/txs/{{block.number}}" class="text-blue-500">{{block.transactions.length}}</a><br>
   Withdrawals: Aparece solo si el bloque es posterior al upgrade de retiro y el nodo lo soporta (block.withdrawals).
 </p>
 <hr class="my-4" />

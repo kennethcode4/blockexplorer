@@ -5,10 +5,11 @@ import { TimeAgoPipe } from '../../pipes/time-ago-pipe';
 import { DatePipe, DecimalPipe } from '@angular/common';
 import { MinerNamePipe } from '../../pipes/miner-name-pipe';
 import { formatEther } from 'ethers';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-block',
-  imports: [TimeAgoPipe, DatePipe, MinerNamePipe, DecimalPipe],
+  imports: [TimeAgoPipe, DatePipe, MinerNamePipe, DecimalPipe, RouterLink],
   templateUrl: './block.html',
   styleUrl: './block.scss',
 })
